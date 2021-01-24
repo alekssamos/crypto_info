@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'crypto_info' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 'crypto_info' '2021.01.24'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2021-01-24 14:13+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: addon\globalPlugins\crypto_info\__init__.py:52
+#: addon\globalPlugins\crypto_info\__init__.py:136
+msgid "Data is being received... Wait..."
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\__init__.py:57
+#: addon\globalPlugins\crypto_info\crypto_infoFrame.py:35
+msgid "Name"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\__init__.py:57
+#: addon\globalPlugins\crypto_info\crypto_infoFrame.py:36
+msgid "Price"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\__init__.py:57
+msgid "changes"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\__init__.py:57
+#: addon\globalPlugins\crypto_info\crypto_infoFrame.py:38
+msgid "Capitalization"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\__init__.py:66
+msgid ""
+"An error occurred while retrieving the data. Check the connection and try "
+"again after a while."
+msgstr ""
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on to be shown on installation and add-on information.
+#: addon\globalPlugins\crypto_info\__init__.py:76 buildVars.py:17
+msgid "crypto info"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\__init__.py:108
+#: addon\globalPlugins\crypto_info\__init__.py:109
+#: addon\globalPlugins\crypto_info\__init__.py:110
+#: addon\globalPlugins\crypto_info\__init__.py:111
+#: addon\globalPlugins\crypto_info\__init__.py:112
+#: addon\globalPlugins\crypto_info\__init__.py:113
+#: addon\globalPlugins\crypto_info\__init__.py:114
+#: addon\globalPlugins\crypto_info\__init__.py:115
+#: addon\globalPlugins\crypto_info\__init__.py:116
+#: addon\globalPlugins\crypto_info\__init__.py:117
+msgid "Position #"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\__init__.py:118
+msgid "Open crypto info window"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\crypto_infoFrame.py:23
+msgid "crypto_info"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\crypto_infoFrame.py:30
+msgid "Refresh"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\crypto_infoFrame.py:37
+msgid "Change percent in 24 h"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\crypto_infoFrame.py:44
+msgid "OK"
+msgstr ""
+
+#: addon\globalPlugins\crypto_info\crypto_infoFrame.py:48
+msgid "Cancel"
+msgstr ""
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:20
+msgid "Gets information about cryptocurrencies."
+msgstr ""
