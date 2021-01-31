@@ -1,4 +1,5 @@
 """Parser websites, base class with functions"""
+import html
 import re
 
 
@@ -7,11 +8,14 @@ class Base:
 
     name = ""
 
-    def get_info(self):
+    def get_info(self, convert_numbers=True):
         """Get the currency table from the website
 
+        Args:
+            convert_numbers (bool, optional): [description]. Defaults to True.
+
         Returns:
-                 tuple: (headers 1d list, content 2d list with rows and cols)
+            tuple: (headers 1d list, content 2d list with rows and cols)
         """
 
     def strip_tags(self, text):
@@ -62,6 +66,7 @@ class Base:
         Returns:
             str: converted string
         """
-        res = str(obj)
-        if "-" not in res and re.match("[\d]", res[0]): res = "+" + res
+        res = html.unescape(str(obj))
+        if "-" not in res and re.match("[\d]", res[0]):
+            res = "+" + res
         return res

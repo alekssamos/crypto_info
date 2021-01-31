@@ -11,7 +11,7 @@ class Investing(Base):
 
     flags = re.DOTALL + re.IGNORECASE
 
-    def get_info(self):
+    def get_info(self, convert_numbers=True):
         """Get the currency table from the ru.investing.com website
 
         Returns:
@@ -40,12 +40,14 @@ class Investing(Base):
         for tr in tbody_trs:
             tbody_tr_tds = re.findall("<td[^>]{0,}>(.*?)</td>", tr, self.flags)
             tbody_tr_tds = [self.strip_tags(l) for l in tbody_tr_tds]
-            for i in range(3, 9):
-                tbody_tr_tds[i] = self.strToFloat(tbody_tr_tds[i])
+            if convert_numbers:
+                for i in range(3, 9):
+                    tbody_tr_tds[i] = self.strToFloat(tbody_tr_tds[i])
 
             table_content.append(tbody_tr_tds)
 
         return (table_headers, table_content)
+
 
 if __name__ == "__main__":
     iv = Investing()

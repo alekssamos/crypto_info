@@ -1,6 +1,6 @@
 # Дополнение crypto info для NVDA
 
-[Скачать версию 2021.01.24](https://github.com/alekssamos/crypto_info/releases/latest/download/crypto_info-2021.01.24.nvda-addon)
+[Скачать версию 2021.01.31](https://github.com/alekssamos/crypto_info/releases/latest/download/crypto_info-2021.01.31.nvda-addon)
 
 ### Горячие клавиши
 * nvda+Alt+K - Показать список криптовалют
