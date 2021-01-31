@@ -33,7 +33,7 @@ parsers_names = [l.name for l in parsers_classes]
 
 def parseData(classname):
 	ps = getattr(parsers, classname)()
-	headers, content = ps.get_info()
+	headers, content = ps.get_info(False)
 	if classname == "Investing":
 		l = []
 		for c in content:
@@ -56,9 +56,12 @@ def _speakData(classname, position):
 		msg = ""
 		cols = [_("Name"), _("Price"), _("changes"), _("Capitalization")]
 		lines = []
-		if len(cols) != len(data): raise ValueError("")
-		for i in range(0, len(cols)):
-			lines.append(cols[i]+": "+data[i])
+		# if len(cols) != len(data): raise ValueError("")
+		# for i in range(0, len(cols)):
+			# lines.append(cols[i]+": "+data[i])
+		lines.append(data[0])
+		lines.append(cols[1]+": "+data[1])
+		lines.append(cols[3]+": "+data[3])
 		msg = ",\n".join(lines)
 		ui.message(msg)
 	except:
@@ -140,7 +143,7 @@ class crypto_infoFrameDialog(crypto_infoFrame):
 		for d in data:
 			self.crypto_list_ctrl.InsertItem(index, d[0])
 			self.crypto_list_ctrl.SetItem(index, 1, d[1])
-			self.crypto_list_ctrl.SetItem(index, 2, d[3]+"%")
+			self.crypto_list_ctrl.SetItem(index, 2, d[3])
 			self.crypto_list_ctrl.SetItem(index, 3, d[2])
 			index=index+1
 
