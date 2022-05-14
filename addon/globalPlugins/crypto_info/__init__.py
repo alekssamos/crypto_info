@@ -109,16 +109,27 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def script_onSettings(self, gesture): self.onSettings(None)
 
 	script_position1.__doc__ = _("Position #")+"1"
+	script_position1.category = "Crypto info"
 	script_position2.__doc__ = _("Position #")+"2"
+	script_position2.category = "Crypto info"
 	script_position3.__doc__ = _("Position #")+"3"
+	script_position3.category = "Crypto info"
 	script_position4.__doc__ = _("Position #")+"4"
+	script_position4.category = "Crypto info"
 	script_position5.__doc__ = _("Position #")+"5"
+	script_position5.category = "Crypto info"
 	script_position6.__doc__ = _("Position #")+"6"
+	script_position6.category = "Crypto info"
 	script_position7.__doc__ = _("Position #")+"7"
+	script_position7.category = "Crypto info"
 	script_position8.__doc__ = _("Position #")+"8"
+	script_position8.category = "Crypto info"
 	script_position9.__doc__ = _("Position #")+"9"
+	script_position9.category = "Crypto info"
 	script_position0.__doc__ = _("Position #")+"0"
+	script_position0.category = "Crypto info"
 	script_onSettings.__doc__ = _("Open crypto info window")
+	script_onSettings.category = "Crypto info"
 	__gestures = {
 		"kb:NVDA+Alt+K": "onSettings",
 		"kb:NVDA+Alt+1": "position1",
