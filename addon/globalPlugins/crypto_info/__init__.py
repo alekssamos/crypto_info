@@ -89,8 +89,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			pass
 
 	def onSettings(self, evt):
-		if gui.isInMessageBox:
-			return
 		gui.mainFrame.prePopup()
 		d = crypto_infoFrameDialog(gui.mainFrame)
 		d.Show()
