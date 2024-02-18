@@ -1,6 +1,7 @@
 import config
 import braille
 import scriptHandler
+import queueHandler
 import os
 import json
 import time
@@ -34,14 +35,14 @@ parsers_names = [l.name for l in parsers_classes]
 def parseData(classname):
 	ps = getattr(parsers, classname)()
 	headers, content = ps.get_info(False)
-	if classname == "Investing":
+	if classname == "Coincap":
 		l = []
 		for c in content:
 			l.append((
 				str(c[0]), #name
 				str(c[2]), #price
-				ps.toStr(c[6]), #ch 24h
-				ps.toStr(c[3]) #capitalization
+				str(c[6]), #ch 24h
+				str(c[3]) #capitalization
 			))
 
 		return l
@@ -49,25 +50,22 @@ def parseData(classname):
 	return content
 
 def _speakData(classname, position):
-	ui.message(_("Data is being received... Wait..."))
+	queueHandler.queueFunction(queueHandler.eventQueue, ui.message, _("Data is being received... Wait..."))
 	try:
 		data = parseData(classname)[position]
 		speech.cancelSpeech()
 		msg = ""
 		cols = [_("Name"), _("Price"), _("changes"), _("Capitalization")]
 		lines = []
-		# if len(cols) != len(data): raise ValueError("")
-		# for i in range(0, len(cols)):
-			# lines.append(cols[i]+": "+data[i])
 		lines.append(data[0])
 		lines.append(cols[1]+": "+data[1])
 		lines.append(cols[2]+": "+data[2])
 		lines.append(cols[3]+": "+data[3])
 		msg = ",\n".join(lines)
-		ui.message(msg)
+		queueHandler.queueFunction(queueHandler.eventQueue, ui.message, msg)
 	except:
 		speech.cancelSpeech()
-		ui.message(_('An error occurred while retrieving the data. '
+		queueHandler.queueFunction(queueHandler.eventQueue, ui.message, _('An error occurred while retrieving the data. '
 		'Check the connection and try again after a while.') + resp)
 
 def speakData(classname, position):
@@ -146,7 +144,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 class crypto_infoFrameDialog(crypto_infoFrame):
 	def update_crypto_list_ctrl(self, classname):
-		ui.message(_("Data is being received... Wait..."))
+		queueHandler.queueFunction(queueHandler.eventQueue, ui.message, _("Data is being received... Wait..."))
 		data = parseData(classname)
 		index=0
 		self.crypto_list_ctrl.DeleteAllItems()

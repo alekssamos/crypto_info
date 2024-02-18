@@ -19,7 +19,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Gets information about cryptocurrencies."""),
 	# version
-	"addon_version": "2024.01.15",
+	"addon_version": "2024.02.18",
 	# Author(s)
 	"addon_author": u"alekssamos <aleks-samos@yandex.ru>",
 	# URL for the add-on documentation support
