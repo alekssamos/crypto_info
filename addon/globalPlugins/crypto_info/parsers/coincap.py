@@ -11,6 +11,8 @@ class Coincap(Base):
 
     @staticmethod
     def format_float(f, i=3):
+        if f is None:
+            return 0.000
         return float(("%."+str(i)+"f") % float(f))
 
     def get_info(self, convert_numbers=True):

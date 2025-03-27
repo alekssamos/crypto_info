@@ -66,7 +66,7 @@ def _speakData(classname, position):
 	except:
 		speech.cancelSpeech()
 		queueHandler.queueFunction(queueHandler.eventQueue, ui.message, _('An error occurred while retrieving the data. '
-		'Check the connection and try again after a while.') + resp)
+		'Check the connection and try again after a while.'))
 
 def speakData(classname, position):
 	threading.Thread(target=_speakData, args=[parsers_classes_names[0], position]).start()
